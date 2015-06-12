@@ -1,0 +1,12 @@
+" nocompatible mode
+set nocompatible
+  
+" highlight all search pattern matches
+set hlsearch
+  
+" we use light or even white background
+" and want vim to use readable colors
+set bg=light
+
+" use syntax highlighting
+syntax on

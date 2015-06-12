@@ -1,0 +1,11 @@
+#! /bin/bash -x
+
+for script in $HOME/.etc/bashrc.d/*.sh ; do 
+  if [ -r "$script" ]; then	
+    source "$script"
+    echo "Sourced $script"
+  else 
+    echo "Cannot read $script"
+  fi
+done
+
