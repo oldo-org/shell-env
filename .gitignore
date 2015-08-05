@@ -7,9 +7,4 @@ hs_err_pid*
 
 # intellij
 *.iml
-.idea/vcs.xml
-.idea/modules.xml
-.idea/misc.xml
-.idea/compiler.xml
-.idea/.name
-.idea/copyright
+.idea
