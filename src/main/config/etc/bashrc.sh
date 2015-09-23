@@ -1,6 +1,6 @@
 #! /bin/bash -x
 
-source() {
+do_source() {
 	if [ -r "$1" ]; then
       source "$1"
       echo "Sourced $1"
@@ -10,7 +10,7 @@ source() {
 }
 
 for script in $HOME/.etc/bashrc.d/*.sh ; do
-	source "${script}"
+	do_source "${script}"
 done
 
-source "$HOME/.bashrc.local"
+do_source "$HOME/.bashrc.local"
