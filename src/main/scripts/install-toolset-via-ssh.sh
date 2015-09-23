@@ -1,11 +1,19 @@
 #! /bin/bash -ex
 
+name=shell-env
 target=$1
 
-name=shell-env
+ssh_run() {
+  ssh $target -C "$1"
+}
 
-ssh $1 -C "svn co https://github.com/guppy4j/${name}/trunk ~/.${name}"
+ssh_run "svn co https://github.com/guppy4j/${name}/trunk ~/.${name}"
 
-setup_script="~/.${name}/src/main/scripts/setup-symlinks.sh"
-ssh $1 -C "chmod u+x ${setup_script}"
-ssh $1 -C "${setup_script}"
+scripts="~/.${name}/src/main/scripts"
+
+ssh_run "chmod u+x ${scripts}/setup-symlinks.sh"
+ssh_run "${scripts}/setup-symlinks.sh"
+
+ssh_run "ln -s --force --backup=simple ~/.{name}/src/main/config/etc .etc"
+ssh_run "ln -s --force --backup=simple ${scripts} ."
+ssh_run "chmod ugo+x ~/scripts/*.sh"
