@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash -ex
 
 cd "$TEMP"
 rm setup-x86_64.exe
