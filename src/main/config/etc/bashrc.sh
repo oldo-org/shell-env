@@ -1,5 +1,7 @@
 #! /bin/bash -x
 
+[ -z "$PS1" ] && return
+
 do_source() {
 	if [ -r "$1" ]; then
       source "$1"
