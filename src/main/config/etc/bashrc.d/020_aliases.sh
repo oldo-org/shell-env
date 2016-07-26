@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# determine if a command is an executable, alias, keyword or function
+alias whatis='type -a'
+
 # Interactive verbose operation...
 alias rm='rm -iv'
 alias cp='cp -iv'
@@ -8,13 +11,11 @@ alias mv='mv -iv'
 # Default to human readable figures
 alias df='df -h'
 alias du='du -h'
- 
-# Misc
-alias less='less -r'                          # raw control characters
-alias whence='type -a'                        # where, of a sort
-alias grep='grep --color'                     # show differences in colour
-alias egrep='egrep --color=auto'              # show differences in colour
-alias fgrep='fgrep --color=auto'              # show differences in colour
+
+# Use colours when grepping
+alias grep='grep --color'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
  
 # Some shortcuts for different directory listings
 alias ls='ls -hF --color=tty'                 # classify files in colour

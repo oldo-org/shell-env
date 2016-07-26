@@ -4,7 +4,7 @@ set nocompatible
 " highlight all search pattern matches
 set hlsearch
   
-" we use light or even white background
+" if you use light or even white background
 " and want vim to use readable colors
 set bg=light
 
