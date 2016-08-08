@@ -25,3 +25,4 @@ Font=Lucida Console
 FontHeight=8
 Rows=70
 Columns=100
+CursorBlinks=no
