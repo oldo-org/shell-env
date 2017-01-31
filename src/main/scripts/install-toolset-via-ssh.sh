@@ -1,17 +1,19 @@
 #! /bin/bash -ex
 
+host=$1
 name=shell-env
-source="https://github.com/guppy4j/shell-env.git"
-target=$1
+repo="https://github.com/guppy4j/${name}.git"
+dir=".${name}"
 
 ssh_run() {
-  ssh $target -C "$1"
+  ssh "${host}" -C "$1"
 }
 
-ssh_run "svn co ${source} .${name}" || ssh_run "git clone ${source} .${name}"
+ssh_run "rm -rf ${dir}"
+ssh_run "svn co ${repo} ${dir}" || ssh_run "git clone ${repo} ${dir}"
 
-scripts=".${name}/src/main/scripts"
-etc=".${name}/src/main/config/etc"
+etc="${dir}/src/main/config/etc"
+scripts="${dir}/src/main/scripts"
 
 ssh_run "ln -s --force --backup=simple ${etc} .etc"
 ssh_run "ln -s --force --backup=simple ${scripts} ."
