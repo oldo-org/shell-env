@@ -1,14 +1,13 @@
 #! /bin/bash
 
-dir=/opt/data/family
-bak=/mnt/backup/family
+bak=/mnt/backup
  
 sudo umount $bak
 sudo mount $bak
  
 if [ $? -eq 0 ]; then
-  rsync -avvi --progress $dir $bak
-  rsync -avvi --progress $bak $dir
+  rsync -avvi --progress /opt/data/family/ $bak/family/
+  rsync -avvi --progress $bak/family/ /opt/data/family/
 fi
  
 sudo umount $bak
