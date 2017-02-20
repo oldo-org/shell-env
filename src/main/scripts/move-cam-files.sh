@@ -1,6 +1,6 @@
 #! /bin/bash -x
 
-storage=/opt/family
+storage=/opt/data/family
  
 move() {
   exiftool -r -v -ext $2 '-directory<DateTimeOriginal' \
