@@ -3,7 +3,7 @@
 host=$1
 name=shell-env
 repo="https://github.com/guppy4j/${name}.git"
-dir=".${name}"
+dir=".${name}/trunk"
 
 ssh_run() {
   ssh "${host}" -C "$1"
