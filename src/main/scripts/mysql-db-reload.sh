@@ -3,7 +3,7 @@
 # Retrieves a remote database dump file and loads it into the local server
 # Script should work for MySql, MariaDb and derivatives
 
-# adjust these variable for your scenario:
+# adjust these variables for your scenario:
 remote_host="bamboo"
 remote_path_prefix="/opt/backup/current/fmas_"
 
