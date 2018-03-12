@@ -7,11 +7,16 @@
 remote_host="bamboo"
 remote_path_prefix="/opt/backup/current/fmas_"
 
+test -z "${2}" && echo "Usage: $(basename $0) db dump_type" && exit 1
+
 # Script parameters (positional, for simplicity)
 # e.g. 'fmas_itests'
 db=$1
 # e.g. 'schema' or 'data'
 dump_type=$2
+
+# set shell option for exit on error behavior
+set -e
  
 # get the remote mysql dump file
 scp ${remote_host}:${remote_path_prefix}${dump_type}.sql.gz .
