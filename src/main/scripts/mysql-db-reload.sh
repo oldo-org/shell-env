@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Retrieves a remote database dump file and loads it into the local server
-# Script should work for MySql, MariaDb and derivatives
+# Script should work for MySql, MariaDb and derivatives,
+# requires the "pv" command for progress bar while loading dump file.
 
 # adjust these variables for your scenario:
 remote_host="bamboo"
