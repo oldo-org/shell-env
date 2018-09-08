@@ -3,7 +3,7 @@
 storage=/opt/data/family
  
 move() {
-  exiftool -r -v -ext $2 '-directory<DateTimeOriginal' \
+  exiftool -r -v -ext $2 '-directory<AllDates' \
            -d "${storage}/$3/%Y/%m" "$1"
 }
  
@@ -11,5 +11,6 @@ move() {
 # if unspecified use current directory
 dir=${1:-.}
  
-move $dir AVI videos
-move $dir JPG photos
+move $dir jpg photos
+move $dir avi videos
+move $dir mp4 videos
