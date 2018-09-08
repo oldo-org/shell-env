@@ -1,13 +1,20 @@
 #! /bin/bash
 
-bak=/mnt/backup
+# ensure sane PATH
+export PATH=/bin:${PATH}
 
-sudo /bin/umount $bak
-sudo /bin/mount $bak
+# adjust these variables for your scenario
+dat="/opt/data"
+bak="/mnt/backup"
+dir="family"
+
+sudo umount $bak
+sudo mount $bak
  
 if [ $? -eq 0 ]; then
-  rsync -au --progress --size-only /opt/data/family/ $bak/family/
-  rsync -au --progress --size-only --chmod=o-w $bak/family/ /opt/data/family/
+  # we use --size-only because backup disk might have buggy timestamps
+  rsync -au --progress --size-only "${dat}/${dir}/" "${bak}/${dir}/"
+  rsync -au --progress --size-only --chmod=o-w "${bak}/${dir}/" "${dat}/${dir}/"
 fi
  
-sudo /bin/umount $bak
+sudo umount $bak

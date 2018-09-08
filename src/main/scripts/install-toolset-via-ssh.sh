@@ -10,7 +10,7 @@ ssh_run() {
 }
 
 ssh_run "rm -rf ${dir}"
-ssh_run "svn co ${repo} ${dir}" || ssh_run "git clone ${repo} ${dir}"
+ssh_run "svn co ${repo}/trunk ${dir}" || ssh_run "git clone ${repo} ${dir}"
 
 etc="${dir}/src/main/config/etc"
 scripts="${dir}/src/main/scripts"
