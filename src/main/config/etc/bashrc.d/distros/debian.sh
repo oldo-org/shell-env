@@ -1,3 +1,5 @@
+#! /bin/bash
+
 alias show='apt-cache show'
 alias search='apt-cache search'
 
