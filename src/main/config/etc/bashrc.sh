@@ -15,4 +15,7 @@ for script in $HOME/.etc/bashrc.d/*.sh ; do
 	do_source "${script}"
 done
 
+os=$(grep '^ID=' /etc/os-release | cut -f2 -d'=')
+do_source "$HOME/.etc/bashrc.d/os-specific/${os}.sh"
+
 do_source "$HOME/.bashrc.local"
