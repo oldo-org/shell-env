@@ -23,7 +23,7 @@ set -e
 scp ${remote_host}:${remote_path_prefix}${dump_type}.sql.gz .
  
 # drop and recreate the database (i.e. the empty hull)
-mysql -e "drop database ${db}"
+mysql -e "drop database if exists ${db}"
 mysql -e "create database ${db}"
  
 # pipe the dump file into the local database server
