@@ -4,18 +4,23 @@
 
 do_source() {
 	if [ -r "$1" ]; then
-      source "$1"
-      echo "Sourced $1"
-    else
-      echo "Cannot read $1"
-    fi
+		source "$1"
+		echo "Sourced $1"
+	else
+		echo "Cannot read $1"
+	fi
 }
 
 for script in $HOME/.etc/bashrc.d/*.sh ; do
 	do_source "${script}"
 done
 
-os=$(grep '^ID=' /etc/os-release | cut -f2 -d'=')
+if [[ "${OSTYPE}" == 'linux-gnu' ]]; then 
+	os="$(grep '^ID=' /etc/os-release | cut -f2 -d'=')"
+else
+	os="${OSTYPE}"
+fi
+
 do_source "$HOME/.etc/bashrc.d/os-specific/${os}.sh"
 
 do_source "$HOME/.bashrc.local"
