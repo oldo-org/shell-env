@@ -1,7 +1,7 @@
 # Colors and font settings for mintty (e.g. Cygwin terminal)
 BoldAsFont=yes
 BoldAsColour=yes
-BackgroundColour=255,255,255
+BackgroundColour=235,235,235
 ForegroundColour=0,0,0
 CursorColour=255,0,0
 CursorType=block
@@ -22,7 +22,10 @@ BoldCyan=30,0,50
 White=60,60,60
 BoldWhite=40,40,40
 Font=Lucida Console
-FontHeight=8
-Rows=70
-Columns=100
-CursorBlinks=no
+FontHeight=10
+Rows=40
+Columns=120
+CursorBlinks=yes
+Transparency=high
+OpaqueWhenFocused=yes
+Scrollbar=left
