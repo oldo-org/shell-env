@@ -16,11 +16,11 @@ for script in $HOME/.etc/bashrc.d/*.sh ; do
 done
 
 if [[ "${OSTYPE}" == 'linux-gnu' ]]; then 
-	os="$(grep '^ID=' /etc/os-release | cut -f2 -d'=')"
+	source /etc/os-release
+	os="${ID}"
 else
 	os="${OSTYPE}"
 fi
 
 do_source "$HOME/.etc/bashrc.d/os-specific/${os}.sh"
-
 do_source "$HOME/.bashrc.local"
