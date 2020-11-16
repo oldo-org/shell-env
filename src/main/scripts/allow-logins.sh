@@ -1,9 +1,14 @@
 #!/bin/bash
 
-d=".logins-remaining/"
+usage() {
+  echo "Usage: $(basename $0) user number-of-logins"
+}
+test $# -ne 2 && usage && exit 2
 
 u="$1"
 n="$2"
+
+d=".logins-remaining/"
 
 if [ "$n" -eq "$n" ]; then
   # n is a number and we can go ahead
