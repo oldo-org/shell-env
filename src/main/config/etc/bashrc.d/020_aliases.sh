@@ -25,3 +25,5 @@ alias ll='ls -l'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -CF'                              #
 
+# database
+alias pg='sudo su - postgres -c "psql postgres"'
