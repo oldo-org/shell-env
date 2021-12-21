@@ -1,3 +1,3 @@
 #!/bin/sh
 
-xfreerdp ~/.config/freerdp/client/$1.rdp
+xfreerdp ~/.config/freerdp/client/"$1".rdp
