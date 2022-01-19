@@ -29,4 +29,4 @@ alias l='ls -CF'                              #
 alias pg='sudo su - postgres -c "psql postgres"'
 
 # wellness
-alias reddershift='pkill -f redshift; sleep 2; redshift -r -O 2200 -b 0.8'
+alias candlelight='redshift -P -O 2200'
