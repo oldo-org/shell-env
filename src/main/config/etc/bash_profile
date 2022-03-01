@@ -1,8 +1,10 @@
 #! /bin/bash
 
-if [ -z "${SSH_AUTH_SOCK}" ]; then 
-  keychain id_ed25519 id_rsa
-  source ~/.keychain/$HOSTNAME-sh
+if [[ "${OSTYPE}" == 'linux-gnu' ]]; then
+    if [ -z "${SSH_AUTH_SOCK}" ]; then
+      keychain id_ed25519 id_rsa
+      source ~/.keychain/$HOSTNAME-sh
+    fi
 fi
 
 source ~/.bashrc
