@@ -2,7 +2,7 @@
 echo "<!DOCTYPE html>"
 echo "<html>"
 echo "<head>"
-echo "<meta name="robots" content="noindex,nofollow" />"
+echo "<meta name='robots' content='noindex,nofollow' />"
 echo "<style>img { float:left;padding:1em;height:15em; }</style>"
 echo "</head>"
 echo "<body>"
