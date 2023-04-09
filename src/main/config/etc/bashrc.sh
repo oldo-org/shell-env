@@ -11,7 +11,7 @@ do_source() {
 	fi
 }
 
-for script in $HOME/.etc/bashrc.d/*.sh ; do
+for script in "$HOME"/.etc/bashrc.d/*.sh ; do
 	do_source "${script}"
 done
 
