@@ -27,3 +27,6 @@ alias l='ls -CF'                              #
 
 # database
 alias pg='sudo su - postgres -c "psql postgres"'
+
+# wellness
+alias candle='redshift -P -r -O 2200 -b 0.8'
