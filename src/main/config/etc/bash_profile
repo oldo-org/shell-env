@@ -8,3 +8,6 @@ if [[ "${OSTYPE}" == 'linux-gnu' ]]; then
 fi
 
 source ~/.bashrc
+
+# Created by `pipx` on 2024-02-17 22:40:04
+export PATH="$PATH:/home/oliver/.local/bin"
