@@ -45,6 +45,9 @@ $(anchors $(directories))
 $(anchors *.html)
 $(anchors *.txt)
 $(anchors *.epub)
+$(anchors *.mp4)
+$(anchors *.pdf)
+$(anchors *.zip)
 
 </body>
 </html>

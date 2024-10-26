@@ -10,7 +10,8 @@ IFS="|"
 
 year=$(date +%Y)
 today=$(date +%m-%d)
-in1week=$(date +%m-%d -d "today + 1 week")
+tomorrow=$(date +%m-%d -d "today + 1 day")
+in1week_=$(date +%m-%d -d "today + 1 week")
 in2weeks=$(date +%m-%d -d "today + 2 week")
 in3weeks=$(date +%m-%d -d "today + 3 week")
 
@@ -33,8 +34,10 @@ xmlstarlet sel -T -t \
   details="$email\n$address"
 
   if [[ $bday = $today ]]; then
-    notify "$msg (Today!)" "$details"
-  elif [[ $bday = $in1week ]]; then
+    notify "$msg (Today!!)" "$details"
+  elif [[ $bday = $tomorrow ]]; then
+    notify "$msg (Tomorrow!)" "$details"
+  elif [[ $bday = $in1week_ ]]; then
     notify "$msg (in 1 week)" "$details"
   elif [[ $bday = $in2weeks ]]; then
     notify "$msg (in 2 weeks)" "$details"
