@@ -3,10 +3,10 @@
 sanitize() {
   shopt -s extglob;
  
-  filename=$(basename "$1" | )
+  filename=$(basename "$1")
   directory=$(dirname "$1")
  
-  filename_clean="${filename//+([^[:alnum:]_-\.])/_}"
+  filename_clean="${filename//+([^\.[:alnum:]_-])/_}"
  
   if (test "$filename" != "$filename_clean")
   then

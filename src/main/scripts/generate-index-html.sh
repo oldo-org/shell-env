@@ -4,7 +4,7 @@ function symlinks() {
   find -L . -xtype l -samefile $1
 }
 function directories() {
-  find -maxdepth 1 -name '[^\.]*' -type d -printf '%P\n'
+  find -maxdepth 1 -name '[^\.]*' -type d -printf '%P\n' | sort
 }
 function title() {
   echo "${1%.*}" | tr '-' ' '
@@ -45,6 +45,10 @@ $(anchors $(directories))
 $(anchors *.html)
 $(anchors *.txt)
 $(anchors *.epub)
+$(anchors *.mp4)
+$(anchors *.mov)
+$(anchors *.pdf)
+$(anchors *.zip)
 
 </body>
 </html>
